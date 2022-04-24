@@ -1,0 +1,62 @@
+
+
+<div class="home">
+    <div class=hometext>
+        {{home_text}}
+    </div>
+    <div class="search" >
+        <form method="get" action="/search">
+            <label for="query">Search:
+            </label><input type="search" id="query" name="query" placeholder="Find group...">
+            <button type="submit">search</button>
+        </form>
+    </div>
+    <h2>My Group's Posts:</h2>
+    <div class="post-view">
+        {{#post}}
+        <h2>{{GroupName}}</h2>
+        <h3>{{Title}}</h3>
+        <h4>{{Username}}, {{Date}}: Likes {{Likes}}, Dislikes {{Dislikes}}</h4>
+        <p>{{Content}}</p>
+        <form method="post" action="home/like">
+            <input type="hidden" name="id" id="id" value="{{ID}}">
+            <button type="submit">Like</button>
+        </form>
+        <form method="post" action="home/dislike">
+            <input type="hidden" name="id" id="id" value="{{ID}}">
+            <button type="submit">Dislike</button>
+        </form>
+        {{/post}}
+    </div>
+
+    <div class="topcorner" id="create">
+        <h3>Create</h3>
+        <form method="get" action="/create/group">
+            <button type="submit">Group</button>
+        </form>
+        <form method="get" action="/create/post">
+            <button type="submit">Post</button>
+        </form>
+        <br>
+        <h4>My Groups</h4>
+        {{#group}}
+        <form method="get" action="/view">
+            <label for="view">{{Name}}</label>
+            <input type="hidden" id="name" name="name" value="{{Name}}">
+            <button type="submit" id="view" name="view">View</button>
+        </form>
+        {{/group}}
+    </div>
+
+</div>
+
+
+
+<style>
+    .topcorner{
+        position:absolute;
+        top:2%;
+        right:2%;
+    }
+
+</style>

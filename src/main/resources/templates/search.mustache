@@ -1,0 +1,13 @@
+{{> gohome}}
+
+<div class="search" >
+    <form method="get" action="/search">
+        <label for="query">Search:
+        </label><input type="search" id="query" name="query" placeholder="Find group...">
+        <button type="submit">search</button>
+    </form>
+</div>
+
+<h3>Found Groups:</h3>
+<br>
+{{> view/group}}

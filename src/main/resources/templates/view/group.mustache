@@ -1,0 +1,19 @@
+<div class="group-view">
+    {{#group}}
+        <h3>{{Name}}</h3>
+        <p>Date Created: {{Date}}</p>
+        <p>Users: {{NumUsers}}</p>
+        <p>Posts: {{NumPosts}}</p>
+    <div>
+        <form method="get" action="view">
+            <input type="hidden" id="gname" name="name" value="{{Name}}">
+            <button type="submit">View</button>
+        </form>
+        <form method="post" action="join">
+            <input type="hidden" id="name" name="name" value="{{Name}}">
+            <button type="submit">Join</button>
+        </form>
+    </div>
+
+    {{/group}}
+</div>

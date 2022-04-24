@@ -1,0 +1,21 @@
+<div class="postCreate">
+    <h1>Create Post</h1>
+    <h2>{{create_post_error}}</h2>
+
+    <form method="post" action="/create/post">
+        <label for="gname">Group to post to:<br></label>
+        <input type="text" id="gname" name="gname" required>
+        <br>
+        <label for="title">Title:<br></label>
+        <input type="text" id="title" name="title" required>
+        <br>
+        <label for="text">Text:<br></label>
+        <textarea id="text" name="text" rows="5" cols="33">
+
+        </textarea>
+        <br>
+        <button type="submit">Post</button>
+    </form>
+</div>
+
+{{> gohome}}

@@ -1,0 +1,11 @@
+<div class="groupCreate">
+    <h1>Create Group</h1>
+    <h2>{{create_group_error}}</h2>
+    <label for="name">Group Name:</label>
+    <form method="post" action="/create/group">
+        <input type="text" id="name" name="name" required>
+        <button type="submit">Create Group</button>
+    </form>
+</div>
+
+{{> gohome}}
